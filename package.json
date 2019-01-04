@@ -1,0 +1,25 @@
+{
+    "name": "mongodb-ui",
+    "version": "0.0.0",
+    "description": "GUI for mongo database. CRUD for mongo collections.",
+    "main": "lib/index.js",
+    "scripts": {
+        "test": "npm run test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/manojc/mongodb-ui.git"
+    },
+    "keywords": [
+        "mongo",
+        "mongodb",
+        "ui",
+        "gui"
+    ],
+    "author": "chalodem@gmail.com",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/manojc/mongodb-ui/issues"
+    },
+    "homepage": "https://github.com/manojc/mongodb-ui#readme"
+}
