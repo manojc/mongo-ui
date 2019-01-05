@@ -4,6 +4,7 @@
     "description": "GUI for mongo database. CRUD for mongo collections.",
     "main": "lib/index.js",
     "scripts": {
+        "start": "node demo/demo.js",
         "test": "npm run test"
     },
     "repository": {
@@ -23,6 +24,8 @@
     },
     "homepage": "https://github.com/manojc/mongodb-ui#readme",
     "dependencies": {
-        "http": "0.0.0"
+        "fs": "0.0.1-security",
+        "http": "0.0.0",
+        "path": "^0.12.7"
     }
 }
