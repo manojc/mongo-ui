@@ -9,7 +9,7 @@
             "request": "launch",
             "name": "Launch Program",
             "program": "${workspaceFolder}/demo/demo.js",
-            "runtimeExecutable":"/home/kepler/.nvm/versions/node/v10.9.0/bin/node"
+            "runtimeExecutable":"/home/localstars/.nvm/versions/node/v8.12.0/bin/node"
         },
     ],
 }
