@@ -1,16 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home</title>
+    <style>
+        * {
+            box-sizing: border-box
+        }
+        div#container {    
+            width: 100%;
+            padding: 1rem 5rem;
+            min-width: 800px;
+        }
+
+        pre {
+            background-color: black;
+            color: green;
+            font-weight: bolder;
+            line-height: 25px;
+            padding: 10px;
+        }
+
+        span.menu-item {
+            cursor: pointer;
+            color: blue;
+            margin: 0 20px;
+            border-bottom: solid thin blue;
+        }
+    </style>
     <link rel="stylesheet" href="/style/style.css">
 </head>
+
 <body>
-    <h1>Home</h1>
-    <pre id="collections" style="background-color: black; color: green; font-weight: bolder; margin: 0 20%; padding: 10px; line-height: 25px;"></pre>
+    <div id="container">
+        <div>
+            <span id="home" class="menu-item">home</span>
+            <span id="list" class="menu-item">list</span>
+            <span id="documents" class="menu-item">documents</span>
+            <span id="details" class="menu-item">details</span>
+        </div>
+        <div id="outlet"></div>
+    </div>
     <script src="/script/utils.js"></script>
     <script src="/script/home.js"></script>
+    <script id="home-template" type="text/html">
+        <h1>HOME</h1>
+        <pre id="collections"></pre>
+    </script>
+    <script id="list-template" type="text/html">
+        <h1>LIST</h1>
+    </script>
+    <script id="documents-template" type="text/html">
+            <h1>DOCUMENTS</h1>
+    </script>
+    <script id="details-template" type="text/html">
+            <h1>DETAILS</h1>
+    </script>
 </body>
+
 </html>

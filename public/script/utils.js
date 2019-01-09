@@ -15,7 +15,11 @@
             }
         });
     }
+    function injectTemplate(name) {
+        document.getElementById("outlet").innerHTML = document.getElementById(name).innerHTML;
+    }
     window.__mongodbui__.utils = window.__mongodbui__.utils || {
-        postData: postData
+        postData: postData,
+        injectTemplate: injectTemplate
     };
 })(window);
