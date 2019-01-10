@@ -6,42 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home</title>
-    <style>
-        * {
-            box-sizing: border-box
-        }
-        div#container {    
-            width: 100%;
-            padding: 1rem 5rem;
-            min-width: 800px;
-        }
-
-        pre {
-            background-color: black;
-            color: green;
-            font-weight: bolder;
-            line-height: 25px;
-            padding: 10px;
-        }
-
-        span.menu-item {
-            cursor: pointer;
-            color: blue;
-            margin: 0 20px;
-            border-bottom: solid thin blue;
-        }
-    </style>
     <link rel="stylesheet" href="/style/style.css">
 </head>
 
 <body>
+    <div class="topnav">
+        <span id="home" class="menu-item">home</span>
+        <span id="list" class="menu-item">list</span>
+        <span id="documents" class="menu-item">documents</span>
+        <span id="details" class="menu-item">details</span>
+    </div>
     <div id="container">
-        <div>
-            <span id="home" class="menu-item">home</span>
-            <span id="list" class="menu-item">list</span>
-            <span id="documents" class="menu-item">documents</span>
-            <span id="details" class="menu-item">details</span>
-        </div>
         <div id="outlet"></div>
     </div>
     <script src="/script/utils.js"></script>
@@ -52,6 +27,72 @@
     </script>
     <script id="list-template" type="text/html">
         <h1>LIST</h1>
+        <table id="collection-table">
+            <tr>
+                <th>Collection Name</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>Test</td>
+                <td>
+                    <button class="btn btn-blue">Documents</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Berglunds snabbköp</td>
+                <td>
+                    <button class="btn btn-blue">Documents</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Centro comercial Moctezuma</td>
+                <td>
+                    <button class="btn btn-blue">Documents</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Ernst Handel</td>
+                <td>
+                    <button class="btn btn-blue">Documents</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Island Trading</td>
+                <td>
+                    <button class="btn btn-blue">Documents</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Königlich Essen</td>
+                <td>
+                    <button class="btn btn-blue">Documents</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Laughing Bacchus Winecellars</td>
+                <td>
+                    <button class="btn btn-blue">Documents</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Magazzini Alimentari Riuniti</td>
+                <td>
+                    <button class="btn btn-blue">Documents</button>
+                </td>
+            </tr>
+            <tr>
+                <td>North/South</td>
+                <td>
+                    <button class="btn btn-blue">Documents</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Paris spécialités</td>
+                <td>
+                    <button class="btn btn-blue">Documents</button>
+                </td>
+            </tr>
+        </table>        
     </script>
     <script id="documents-template" type="text/html">
             <h1>DOCUMENTS</h1>

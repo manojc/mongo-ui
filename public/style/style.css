@@ -1,7 +1,129 @@
-body {
-    font-family: sans-serif;
+* {
+    box-sizing: border-box
 }
 
-h1 {
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 50px;
+}
+
+div#container {
+    width: 100%;
+    padding: 1rem 5rem;
+    min-width: 800px;
+}
+
+/* menu bar */
+
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+}
+
+.topnav span {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.topnav span:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav span.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* menu bar ends */
+
+/* collection list */
+
+#collection-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#collection-table td,
+#collection-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#collection-table tr td:first-child {
+    width: 80%;
+    max-width: 0;
+    word-wrap: break-word;
+    padding: 10px 20px;
+}
+
+#collection-table tr td:nth-child(2) {
     text-align: center;
 }
+
+#collection-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#collection-table tr:hover {
+    background-color: #ddd;
+}
+
+#collection-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* collection list ends */
+
+/* button css */
+
+.btn {
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.btn-green {
+    background-color: #4CAF50;
+}
+
+/* Green */
+
+.btn-blue {
+    background-color: #008CBA;
+}
+
+/* Blue */
+
+.btn-red {
+    background-color: #f44336;
+}
+
+/* Red */
+
+.btn-gray {
+    background-color: #e7e7e7;
+    color: black;
+}
+
+/* Gray */
+
+.btn-black {
+    background-color: #555555;
+}
+
+/* Black */
+
+/* button css ends */
