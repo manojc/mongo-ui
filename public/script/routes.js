@@ -1,4 +1,4 @@
-((mongodbui, undefined) => {
+window.__mongodbui__ = ((mongodbui, undefined) => {
     "use strict";
 
     /**
@@ -10,5 +10,7 @@
     }
 
     mongodbui.routes = new Routes();
+
+    return mongodbui;
 
 })(window.__mongodbui__ || {});
