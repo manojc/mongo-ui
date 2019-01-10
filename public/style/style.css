@@ -1,25 +1,11 @@
-* {
-    box-sizing: border-box
-}
-
-body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    margin-bottom: 50px;
-}
-
-div#container {
-    width: 100%;
-    padding: 1rem 5rem;
-    min-width: 800px;
-}
-
 /* menu bar */
 
 .topnav {
-    overflow: hidden;
     background-color: #333;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 9;
 }
 
 .topnav span {
@@ -127,3 +113,16 @@ div#container {
 /* Black */
 
 /* button css ends */
+
+
+/* utility classes */
+
+.mtxl {
+    margin-top: 50px;
+}
+
+.mtxxl {
+    margin-top: 100px;
+}
+
+/* utility classes end */
