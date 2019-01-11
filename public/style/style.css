@@ -30,6 +30,11 @@
 
 /* collection list */
 
+.table-container {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
 #collection-table {
     border-collapse: collapse;
     width: 100%;
@@ -106,16 +111,16 @@
 
 .txtPageNumber, .txtSearch, .ddlPageSize {
     width: 100%;
-    padding: 12px 20px;
+    padding: 10px 20px;
     border: 1px solid #ddd;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .txtSearch {
     background-image: url('/icons/searchicon.png');
     background-position: 10px 10px;
     background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
+    padding: 10px 20px 10px 40px;
 }
 
 .ddlPageSize {
@@ -123,12 +128,12 @@
 }
 
 .search-result-label {
-    padding-top: 12px;
+    padding-top: 10px;
     text-align: center;
 }
 
 .search-collections {
-    padding: 12px 20px;
+    padding: 10px 20px;
 }
 
 /* Pagination Ends */
