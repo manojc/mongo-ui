@@ -14,7 +14,7 @@ window.__mongodbui__ = ((mongodbui, undefined) => {
 
         async getCollections(query) {
             try {
-                const response = await mongodbui.apiClient.http("/api/list", "POST", query);
+                const response = await mongodbui.apiClient.http("/api/collections", "POST", query);
                 response && response.isSuccess ?
                     this.rendeList(response.data) :
                     console.error(response.message);
@@ -51,8 +51,14 @@ window.__mongodbui__ = ((mongodbui, undefined) => {
                 location.hash = btoa(JSON.stringify({ n: "", pn: 1, ps: 10, c: 0 }));
         }
 
-        onMenuClick(event) {
-            console.log(event.target.dataset.collection);
+        async onMenuClick(event) {
+            try {
+                const query = { ...this.query };
+                query.n = event.target.dataset.collection;
+                await mongodbui.apiClient.http("/api/documents", "POST", query);
+            } catch (error) {
+                console.error(error);
+            }
         }
 
         onSearch() {

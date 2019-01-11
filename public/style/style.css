@@ -113,7 +113,6 @@
     width: 100%;
     padding: 10px 20px;
     border: 1px solid #ddd;
-    margin-bottom: 10px;
 }
 
 .txtSearch {
@@ -146,6 +145,18 @@
 
 .mtxxl {
     margin-top: 100px;
+}
+
+.mbxl {
+    margin-bottom: 50px;
+}
+
+.mbm {
+    margin-bottom: 20px;
+}
+
+.mbs {
+    margin-bottom: 10px;
 }
 
 .mbxxl {
