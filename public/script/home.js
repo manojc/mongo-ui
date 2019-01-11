@@ -1,55 +1,59 @@
-window.__mongodbui__ = (async (mongodbui, undefined) => {
+window.__mongodbui__ = ((mongodbui, undefined) => {
 
     "use strict";
 
-    class Home {
-        
-        /**
-         * AJAX call to get collection list
-         * @memberof Home
-         * @returns Promise<Array<string>>
-         */
-        getCollections() {
-            mongodbui.utility.http("/api/list")
-                .then(response => document.getElementById("collections").innerHTML = JSON.stringify(response, null, 4))
-                .catch(error => console.error(error));
-        }
-        
-        /**
-         * Binds DOM events
-         * @memberof Home
-         */
-        bindEvents() {
-            const menus = document.getElementsByClassName("menu-item");
-            Array.prototype.slice.call(menus).forEach(el => {
-                el.onclick = () => {
-                    mongodbui.utility.injectTemplate(`${el.id}-template`);
-                    history.pushState(null, null, `#${el.id}`);
-                    el.id === "home" && this.getCollections();
-                }
-            });
+    class Home extends mongodbui.Base {
+
+        constructor(templateId) {
+            super(templateId);
+            this.table = null;
+            this.listItemHtml = "";
+            this.baseHtml = "";
         }
 
-        /**
-         * Initlaises home view
-         * This is the application entry point
-         * @param {*} document
-         * @param {*} event
-         * @memberof Home
-         */
-        init(document, event) {
+        async getCollections() {
+            try {
+                const response = await mongodbui.apiClient.http("/api/list");
+                response && response.isSuccess ?
+                    this.rendeList(response.data) :
+                    console.error(response.message);
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        rendeList(list) {
+            if (!list || !Array.isArray(list)) {
+                return;
+            }
+            this.table.innerHTML = this.baseHtml + list.reduce((html, item) => {
+                html += this.listItemHtml.replace(new RegExp("{{name}}", 'g'), item.name);
+                return html;
+            }, "");
+
             this.bindEvents();
-            const hash = (location.hash || "#home").substring(1);
-            mongodbui.utility.injectTemplate(`${hash}-template`);
-            hash === "home" && this.getCollections();
+        }
+
+        bindEvents() {
+            const menus = document.getElementsByClassName("show-documents");
+            [].slice.call(menus).forEach(el => el.onclick = this.onMenuClick.bind(this));
+        }
+
+        onMenuClick(event) {
+            console.log(event.target.dataset.collection);
+        }
+
+        init(doc, event) {
+            this.injectTemplate();
+            this.getCollections();
+            this.table = document.getElementById("collection-table");
+            this.baseHtml = this.table.innerHTML;
+            this.listItemHtml = document.getElementById("list-item-template").innerHTML;
         }
     }
 
-    window.__mongodbui__.home = new Home();
+    mongodbui.home = new Home("home-template");
 
-    console.log("home registered!");    
-
-    // bind application entry point to window.load event
     window.onload = mongodbui.home.init.bind(mongodbui.home);
 
     return mongodbui;

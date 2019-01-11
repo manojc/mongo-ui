@@ -29,18 +29,6 @@ window.__mongodbui__ = ((mongodbui, undefined) => {
                 }
             });
         }
-
-        /**
-         * template injector
-         * injects given template in specified outlet
-         * default outlet is main outlet
-         * @param {*} name
-         * @param {string} [outlet="outlet"]
-         * @memberof utility
-         */
-        injectTemplate(name, outlet = "outlet") {
-            document.getElementById(outlet).innerHTML = document.getElementById(name).innerHTML;
-        }
     }
 
     mongodbui.utility = new Utility();

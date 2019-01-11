@@ -8,13 +8,11 @@
     z-index: 9;
 }
 
-.topnav span {
+.topnav h2 {
     float: left;
     color: #f2f2f2;
     text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
+    margin: 10px;
     cursor: pointer;
 }
 
@@ -123,6 +121,10 @@
 
 .mtxxl {
     margin-top: 100px;
+}
+
+.mbxxl {
+    margin-bottom: 100px;
 }
 
 /* utility classes end */
