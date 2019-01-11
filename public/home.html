@@ -25,7 +25,28 @@
     <script src="/script/home.js"></script>
     <script id="home-template" type="text/html">
         <div class="row">
-            <div class="col-lg-offset-2 col-lg-8">
+            <div class="col-lg-3">
+                <input type="text" id="txtSearch" class="txtSearch" placeholder="search collections by name...">
+            </div>
+            <div class="col-lg-3 search-result-label">
+                <span>Showing 1 to 10 of 1200 result(s)</span>
+            </div>
+            <div class="col-lg-2">
+                <input type="number" id="txtPageNumber" class="txtPageNumber" placeholder="go to page...">
+            </div>
+            <div class="col-lg-2">
+                <select name="ddlPageSize" id="ddlPageSize" class="ddlPageSize">
+                    <option value="10">10 reocrds</option>
+                    <option value="20">20 records</option>
+                    <option value="50">50 records</option>
+                </select>
+            </div>
+            <div class="col-lg-2">
+                <button class="btn btn-blue search-collections col-lg-8 col-lg-offset-2">Search</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
                 <table id="collection-table">
                     <tr>
                         <th>Collection Name</th>
