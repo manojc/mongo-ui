@@ -31,7 +31,8 @@ window.__mongodbui__ = ((mongodbui, undefined) => {
             }
 
             this.table.innerHTML = this.baseHtml + data.collections.reduce((html, item) => {
-                html += this.listItemHtml.replace(new RegExp("{{name}}", 'g'), item);
+                const row = this.listItemHtml.replace(new RegExp("{{name}}", 'g'), item.name);
+                html += row.replace(new RegExp("{{count}}", 'g'), item.count);
                 return html;
             }, "");
 
@@ -76,7 +77,18 @@ window.__mongodbui__ = ((mongodbui, undefined) => {
             location.hash = btoa(JSON.stringify(this.query));
         }
 
-        init(doc, event) {
+        setContainerHeight() {
+            const tableContainer = document.getElementsByClassName("table-container")[0];
+            tableContainer.style.maxHeight = `${window.innerHeight - 180}px`;
+            tableContainer.style.height = tableContainer.style.maxHeight;
+        }
+
+        onLoad() {
+            this.init();
+            this.setContainerHeight();
+        }
+
+        init() {
             this.injectTemplate();
             this.bindEvents();
             if (location.hash && location.hash.length > 1) {
@@ -99,8 +111,9 @@ window.__mongodbui__ = ((mongodbui, undefined) => {
 
     mongodbui.home = new Home("home-template");
 
-    window.onload = mongodbui.home.init.bind(mongodbui.home);
+    window.onload = mongodbui.home.onLoad.bind(mongodbui.home);
     window.onhashchange = mongodbui.home.init.bind(mongodbui.home);
+    window.onresize = mongodbui.home.setContainerHeight.bind(mongodbui.home);
 
     return mongodbui;
 

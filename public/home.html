@@ -11,13 +11,14 @@
 </head>
 
 <body>
-    <div class="topnav">
-        <h2 id="title">Mongo DB UI</h2>
-    </div>
-    <div class="container mtxxl mbxxl">
-        <div class="row">
-            <div class="col-lg-12" id="outlet"></div>
+    <div class="container-fluid">
+        <div class="topnav row">
+            <div id="title" class="col-lg-12">
+                <img src="/icons/logo.png" alt="logo" class="icon">
+                <h2>MongoDB UI</h2>
+            </div>
         </div>
+        <div class="container mtm" id="outlet"></div>
     </div>
     <script src="/script/base.js"></script>
     <script src="/script/api-client.js"></script>
@@ -49,6 +50,7 @@
                 <table id="collection-table">
                     <tr>
                         <th>Collection Name</th>
+                        <th>Document Count</th>
                         <th>Action</th>
                     </tr>
                 </table>
@@ -58,16 +60,14 @@
     <script id="list-item-template" type="text/html">
         <tr>
             <td>{{name}}</td>
+            <td>{{count}}</td>
             <td>
-                <button class="btn btn-blue show-documents" data-collection="{{name}}">Documents</button>
+                <button class="btn btn-blue show-documents" data-collection="{{name}}">View Documents</button>
             </td>
         </tr>
     </script>
     <script id="documents-template" type="text/html">
-            <h1>DOCUMENTS</h1>
-    </script>
-    <script id="details-template" type="text/html">
-            <h1>DETAILS</h1>
+        <h1>DOCUMENTS</h1>
     </script>
 </body>
 

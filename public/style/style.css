@@ -2,10 +2,7 @@
 
 .topnav {
     background-color: #333;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 9;
+    height: 50px;
 }
 
 .topnav h2 {
@@ -16,14 +13,11 @@
     cursor: pointer;
 }
 
-.topnav span:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-.topnav span.active {
-    background-color: #4CAF50;
-    color: white;
+.topnav .icon {
+    margin-top: 7px;
+    height: 40px;
+    float: left;
+    cursor: pointer;
 }
 
 /* menu bar ends */
@@ -31,7 +25,6 @@
 /* collection list */
 
 .table-container {
-    max-height: 600px;
     overflow-y: auto;
 }
 
@@ -47,13 +40,13 @@
 }
 
 #collection-table tr td:first-child {
-    width: 80%;
+    width: 60%;
     max-width: 0;
     word-wrap: break-word;
     padding: 10px 20px;
 }
 
-#collection-table tr td:nth-child(2) {
+#collection-table tr td:not(:first-child) {
     text-align: center;
 }
 
@@ -140,7 +133,7 @@
 /* utility classes */
 
 .mtxl {
-    margin-top: 50px;
+    margin-top: 70px;
 }
 
 .mtxxl {
@@ -149,6 +142,14 @@
 
 .mbxl {
     margin-bottom: 50px;
+}
+
+.mtm {
+    margin-top: 20px;
+}
+
+.mts {
+    margin-top: 10px;
 }
 
 .mbm {
