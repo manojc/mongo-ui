@@ -44,6 +44,7 @@ window.__mongodbui__ = ((mongodbui, undefined) => {
             const menus = document.getElementsByClassName("show-documents");
             [].slice.call(menus).forEach(el => el.onclick = this.onMenuClick.bind(this));
             this.bindEvents();
+            this.setContainerHeight();
         }
 
         bindEvents() {
@@ -79,13 +80,8 @@ window.__mongodbui__ = ((mongodbui, undefined) => {
 
         setContainerHeight() {
             const tableContainer = document.getElementsByClassName("table-container")[0];
-            tableContainer.style.maxHeight = `${window.innerHeight - 180}px`;
+            tableContainer.style.maxHeight = `${window.innerHeight - 150}px`;
             tableContainer.style.height = tableContainer.style.maxHeight;
-        }
-
-        onLoad() {
-            this.init();
-            this.setContainerHeight();
         }
 
         init() {
@@ -111,7 +107,7 @@ window.__mongodbui__ = ((mongodbui, undefined) => {
 
     mongodbui.home = new Home("home-template");
 
-    window.onload = mongodbui.home.onLoad.bind(mongodbui.home);
+    window.onload = mongodbui.home.init.bind(mongodbui.home);
     window.onhashchange = mongodbui.home.init.bind(mongodbui.home);
     window.onresize = mongodbui.home.setContainerHeight.bind(mongodbui.home);
 
